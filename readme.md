@@ -29,6 +29,8 @@ The [Reports Plugin Premium edition](https://www.cminds.com/wordpress-plugins-li
 
 <details><summary> <b>Expand</b> </summary>
 
+### Reports Included in Free Version of the the Plugin
+
 * **Comment Distribution Report** – Shows the number of comments for each type of post, including custom types.
 * **Author Post Count Report** – Reveals the quantity of posts created by each author.
 * **Post Type Distribution Report** – Indicates the total number of posts within each post category.
