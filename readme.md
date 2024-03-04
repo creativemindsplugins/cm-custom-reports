@@ -15,7 +15,7 @@ This facilitates a seamless export of data for in-depth analysis, empowering you
 
 ## Installation and Usage
 
-> [Detailed User Guide](https://creativeminds.helpscoutdocs.com/category/306-custom-reports-cmcr) | [More FAQ's](https://www.cminds.com/wordpress-plugins-library/purchase-cm-custom-reports-plugin-for-wordpress/#faq)
+> [User Guide](https://creativeminds.helpscoutdocs.com/category/306-custom-reports-cmcr) | [FAQ](https://www.cminds.com/wordpress-plugins-library/purchase-cm-custom-reports-plugin-for-wordpress/#faq)
 
 1. Upload the plugin folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin via the ‘Plugins’ menu in WordPress.
@@ -54,7 +54,7 @@ The [Reports Plugin Premium edition](https://www.cminds.com/wordpress-plugins-li
 
 > [Pro Version Detailed Features List](https://www.cminds.com/wordpress-plugins-library/purchase-cm-custom-reports-plugin-for-wordpress/)  
 
-### Reports Included in Pro Version of the the Plugin:
+### Reports Included in Pro Version of the the Plugin
 
 * **Comment Summary**: Tallies new comments.
 * **Comment Type Breakdown**: Shows comments per post type.
