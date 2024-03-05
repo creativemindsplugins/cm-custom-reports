@@ -25,7 +25,7 @@ This facilitates a seamless export of data for in-depth analysis, empowering you
 
 The [Reports Plugin Premium edition](https://www.cminds.com/wordpress-plugins-library/purchase-cm-custom-reports-plugin-for-wordpress/) streamlines your WordPress site management by providing over 20 varied statistical and graphical reports, simplifying the monitoring of site dynamics and user interactions to equip you with the knowledge for strategic decision-making.
 
-## Use Cases
+## Free Plan Features:
 
 <details><summary> <b>Expand</b> </summary>
 
@@ -37,11 +37,7 @@ The [Reports Plugin Premium edition](https://www.cminds.com/wordpress-plugins-li
 * **User Registration Tally Report** – Enumerates the total registered users on the site.
 * **Leading Authors Report** – Highlights the authors with the highest contribution to the site.
 
-</details>
-
-## Free Plan Features:
-
-<details><summary> <b>Expand</b> </summary>
+### Free plan Features:
 
 * **PDF Data Export**: Ability to download report data as PDF files.
 * **Graph Variety**: Options for Pie, Point, and Bar graphs.
