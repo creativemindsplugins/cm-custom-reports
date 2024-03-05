@@ -37,7 +37,7 @@ The [Reports Plugin Premium edition](https://www.cminds.com/wordpress-plugins-li
 * **User Registration Tally Report** – Enumerates the total registered users on the site.
 * **Leading Authors Report** – Highlights the authors with the highest contribution to the site.
 
-### Free plan Features:
+### Free version Features:
 
 * **PDF Data Export**: Ability to download report data as PDF files.
 * **Graph Variety**: Options for Pie, Point, and Bar graphs.
