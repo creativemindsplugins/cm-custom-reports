@@ -31,11 +31,11 @@ The [Reports Plugin Premium edition](https://www.cminds.com/wordpress-plugins-li
 
 ### Reports Included in Free Version of the the Plugin
 
-* **Comment Distribution Report** – Shows the number of comments for each type of post, including custom types.
-* **Author Post Count Report** – Reveals the quantity of posts created by each author.
-* **Post Type Distribution Report** – Indicates the total number of posts within each post category.
-* **User Registration Tally Report** – Enumerates the total registered users on the site.
-* **Leading Authors Report** – Highlights the authors with the highest contribution to the site.
+* **Comment Distribution Report**: Shows the number of comments for each type of post, including custom types.
+* **Author Post Count Report**: Reveals the quantity of posts created by each author.
+* **Post Type Distribution Report**: Indicates the total number of posts within each post category.
+* **User Registration Tally Report**: Enumerates the total registered users on the site.
+* **Leading Authors Report**: Highlights the authors with the highest contribution to the site.
 
 ### Free version Features:
 
