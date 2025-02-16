@@ -1,0 +1,77 @@
+<div class="clear"></div>
+<br/>
+<h2><?php _e('List of CM Custom Reports'); ?> </h2>
+<br/>
+<hr>
+<?php
+$reports = CM_Custom_Reports_Backend::getReportOptions();
+$listContentArr = array();
+$reportsGroups = array();
+if( !empty($reports) ) {
+    foreach($reports as $slug => $options) {
+        $reportObj = new $options['class'];
+        $reportOnList = $reportObj->displayReportOnList();
+        $reportGroups = $reportObj->getGroupsFiltered();
+        $reportsGroups = array_merge($reportsGroups, $reportGroups);
+        foreach($reportGroups as $key => $label) {
+            $listContentArr[$key][] = $reportOnList;
+        }
+    }
+}
+$reportsGroups = array_merge(array('fav' => 'Favorite'), $reportsGroups);
+$orderedReportsGroups = apply_filters('cmcr_report_groups', $reportsGroups);
+
+$orderedReportsGroups['pages'] = 'Pages';
+$orderedReportsGroups['revisions'] = 'Revisions';
+$orderedReportsGroups['wp'] = 'WordPress';
+
+$listContentArr['comments'][] = '<div class="cmcr_report_icon_container" style="opacity:0.5;"><img src="'.CMCR_PLUGIN_URL . 'backend/assets/images/default-icon.png" /></a></div><div class="cmcr_report_info_container" style="opacity:0.5;clear:both;"><div class="cmcr_report_link"><a href="'.admin_url('admin.php?page=cmcr_pro').'">Comments by Author</a></div><div class="cmcr_report_description">Report displays amount of comments by author</div><div class="cmcr_report_additional_info" style="color:green;">(Only in Pro)</div></div>';
+$listContentArr['comments'][] = '<div class="cmcr_report_icon_container" style="opacity:0.5;"><img src="'.CMCR_PLUGIN_URL . 'backend/assets/images/default-icon.png" /></a></div><div class="cmcr_report_info_container" style="opacity:0.5;clear:both;"><div class="cmcr_report_link"><a href="'.admin_url('admin.php?page=cmcr_pro').'">Comments</a></div><div class="cmcr_report_description">Report about number of comments added</div><div class="cmcr_report_additional_info" style="color:green;">(Only in Pro)</div></div>';
+
+$listContentArr['pages'][] = '<div class="cmcr_report_icon_container" style="opacity:0.5;"><img src="'.CMCR_PLUGIN_URL . 'backend/assets/images/default-icon.png" /></a></div><div class="cmcr_report_info_container" style="opacity:0.5;clear:both;"><div class="cmcr_report_link"><a href="'.admin_url('admin.php?page=cmcr_pro').'">Trashed Pages</a></div><div class="cmcr_report_description">Report about trashed pages</div><div class="cmcr_report_additional_info" style="color:green;">(Only in Pro)</div></div>';
+$listContentArr['pages'][] = '<div class="cmcr_report_icon_container" style="opacity:0.5;"><img src="'.CMCR_PLUGIN_URL . 'backend/assets/images/default-icon.png" /></a></div><div class="cmcr_report_info_container" style="opacity:0.5;clear:both;"><div class="cmcr_report_link"><a href="'.admin_url('admin.php?page=cmcr_pro').'">Pages</a></div><div class="cmcr_report_description">Report about new published pages</div><div class="cmcr_report_additional_info" style="color:green;">(Only in Pro)</div></div>';
+$listContentArr['pages'][] = '<div class="cmcr_report_icon_container" style="opacity:0.5;"><img src="'.CMCR_PLUGIN_URL . 'backend/assets/images/default-icon.png" /></a></div><div class="cmcr_report_info_container" style="opacity:0.5;clear:both;"><div class="cmcr_report_link"><a href="'.admin_url('admin.php?page=cmcr_pro').'">Pages by Author</a></div><div class="cmcr_report_description">Report displays amount of pages by author</div><div class="cmcr_report_additional_info" style="color:green;">(Only in Pro)</div></div>';
+$listContentArr['pages'][] = '<div class="cmcr_report_icon_container" style="opacity:0.5;"><img src="'.CMCR_PLUGIN_URL . 'backend/assets/images/default-icon.png" /></a></div><div class="cmcr_report_info_container" style="opacity:0.5;clear:both;"><div class="cmcr_report_link"><a href="'.admin_url('admin.php?page=cmcr_pro').'">Views by Page</a></div><div class="cmcr_report_description">Report about page views</div><div class="cmcr_report_additional_info" style="color:green;">(Only in Pro)</div></div>';
+
+$listContentArr['posts'][] = '<div class="cmcr_report_icon_container" style="opacity:0.5;"><img src="'.CMCR_PLUGIN_URL . 'backend/assets/images/default-icon.png" /></a></div><div class="cmcr_report_info_container" style="opacity:0.5;clear:both;"><div class="cmcr_report_link"><a href="'.admin_url('admin.php?page=cmcr_pro').'">Trashed Posts</a></div><div class="cmcr_report_description">Report about trashed posts</div><div class="cmcr_report_additional_info" style="color:green;">(Only in Pro)</div></div>';
+$listContentArr['posts'][] = '<div class="cmcr_report_icon_container" style="opacity:0.5;"><img src="'.CMCR_PLUGIN_URL . 'backend/assets/images/default-icon.png" /></a></div><div class="cmcr_report_info_container" style="opacity:0.5;clear:both;"><div class="cmcr_report_link"><a href="'.admin_url('admin.php?page=cmcr_pro').'">Posts & Pages</a></div><div class="cmcr_report_description">CSV report containing basic information about all published posts and pages (date, type, title, link, categories and author).</div><div class="cmcr_report_additional_info" style="color:green;">(Only in Pro)</div></div>';
+$listContentArr['posts'][] = '<div class="cmcr_report_icon_container" style="opacity:0.5;"><img src="'.CMCR_PLUGIN_URL . 'backend/assets/images/default-icon.png" /></a></div><div class="cmcr_report_info_container" style="opacity:0.5;clear:both;"><div class="cmcr_report_link"><a href="'.admin_url('admin.php?page=cmcr_pro').'">Posts</a></div><div class="cmcr_report_description">Report about new published posts</div><div class="cmcr_report_additional_info" style="color:green;">(Only in Pro)</div></div>';
+$listContentArr['posts'][] = '<div class="cmcr_report_icon_container" style="opacity:0.5;"><img src="'.CMCR_PLUGIN_URL . 'backend/assets/images/default-icon.png" /></a></div><div class="cmcr_report_info_container" style="opacity:0.5;clear:both;"><div class="cmcr_report_link"><a href="'.admin_url('admin.php?page=cmcr_pro').'">Views by Post</a></div><div class="cmcr_report_description">Report about post views</div><div class="cmcr_report_additional_info" style="color:green;">(Only in Pro)</div></div>';
+
+$listContentArr['users'][] = '<div class="cmcr_report_icon_container" style="opacity:0.5;"><img src="'.CMCR_PLUGIN_URL . 'backend/assets/images/default-icon.png" /></a></div><div class="cmcr_report_info_container" style="opacity:0.5;clear:both;"><div class="cmcr_report_link"><a href="'.admin_url('admin.php?page=cmcr_pro').'">Registered Users Details</a></div><div class="cmcr_report_description">Report containing the details of the registered users (name, e-mail and registration date)</div><div class="cmcr_report_additional_info" style="color:green;">(Only in Pro)</div></div>';
+
+$listContentArr['revisions'][] = '<div class="cmcr_report_icon_container" style="opacity:0.5;"><img src="'.CMCR_PLUGIN_URL . 'backend/assets/images/default-icon.png" /></a></div><div class="cmcr_report_info_container" style="opacity:0.5;clear:both;"><div class="cmcr_report_link"><a href="'.admin_url('admin.php?page=cmcr_pro').'">Revisions by Author</a></div><div class="cmcr_report_description">Report displays amount of revisions by author</div><div class="cmcr_report_additional_info" style="color:green;">(Only in Pro)</div></div>';
+$listContentArr['revisions'][] = '<div class="cmcr_report_icon_container" style="opacity:0.5;"><img src="'.CMCR_PLUGIN_URL . 'backend/assets/images/default-icon.png" /></a></div><div class="cmcr_report_info_container" style="opacity:0.5;clear:both;"><div class="cmcr_report_link"><a href="'.admin_url('admin.php?page=cmcr_pro').'">Revisions</a></div><div class="cmcr_report_description">Report about number of revisions created</div><div class="cmcr_report_additional_info" style="color:green;">(Only in Pro)</div></div>';
+
+$listContentArr['wp'][] = '<div class="cmcr_report_icon_container" style="opacity:0.5;"><img src="'.CMCR_PLUGIN_URL . 'backend/assets/images/default-icon.png" /></a></div><div class="cmcr_report_info_container" style="opacity:0.5;clear:both;"><div class="cmcr_report_link"><a href="'.admin_url('admin.php?page=cmcr_pro').'">WP Login Details</a></div><div class="cmcr_report_description">Report containing the details user logins.</div><div class="cmcr_report_additional_info" style="color:green;">(Only in Pro)</div></div>';
+$listContentArr['wp'][] = '<div class="cmcr_report_icon_container" style="opacity:0.5;"><img src="'.CMCR_PLUGIN_URL . 'backend/assets/images/default-icon.png" /></a></div><div class="cmcr_report_info_container" style="opacity:0.5;clear:both;"><div class="cmcr_report_link"><a href="'.admin_url('admin.php?page=cmcr_pro').'">WP Logins By User</a></div><div class="cmcr_report_description">Report number of user logins to the WP by user</div><div class="cmcr_report_additional_info" style="color:green;">(Only in Pro)</div></div>';
+$listContentArr['wp'][] = '<div class="cmcr_report_icon_container" style="opacity:0.5;"><img src="'.CMCR_PLUGIN_URL . 'backend/assets/images/default-icon.png" /></a></div><div class="cmcr_report_info_container" style="opacity:0.5;clear:both;"><div class="cmcr_report_link"><a href="'.admin_url('admin.php?page=cmcr_pro').'">WP Logins</a></div><div class="cmcr_report_description">Report number of user logins to the WP</div><div class="cmcr_report_additional_info" style="color:green;">(Only in Pro)</div></div>';
+
+?>
+<div class="cmcr_reports_list_wrapper">
+    <?php
+	if( !empty($listContentArr) ) {
+		foreach($orderedReportsGroups as $groupKey => $groupLabel) {
+			?>
+            <div class="cmcr_reports_group_wrapper">
+				<h3 class="cmcr_reports_group_label">
+					<?php echo $groupLabel; ?>
+                </h3>
+                <ul class="cmcr_reports_list" id="cm_reports_list_<?php echo $groupKey; ?>">
+                    <?php
+					if( !empty($listContentArr[$groupKey]) ) {
+						foreach($listContentArr[$groupKey] as $item) {
+							?>
+							<li class="cmcr_reports_list_item"><?php echo $item; ?></li>
+							<?php
+						}
+					}
+					?>
+                </ul>
+                <div class="clear clearfix"></div>
+            </div>
+            <?php
+		}
+	}
+    ?>
+</div>
